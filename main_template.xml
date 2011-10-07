@@ -639,6 +639,33 @@ html .mobile .mobile-date-outer, html .mobile .blog-pager {
 
 <!-- Кнопка мне нравится для главной страницы -->
 <script charset='windows-1251' src='http://vkontakte.ru/js/api/share.js?11' type='text/javascript'/>
+<!--Кусок для lightbox, который для календаря-->
+<link type="text/css" media="screen" rel="stylesheet" href="http://dl.getdropbox.com/u/2863383/js/colorbox132/example2/colorbox.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://raw.github.com/artleg/table_tennis_school/master/scripts/jquery.colorbox.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+//Examples of how to assign the ColorBox event to elements
+$("a[rel='example1']").colorbox();
+$("a[rel='example2']").colorbox({transition:"fade"});
+$("a[rel='example3']").colorbox({transition:"none", width:"75%", height:"75%"});
+$("a[rel='example4']").colorbox({slideshow:true});
+$(".single").colorbox({}, function(){
+alert('Howdy, this is an example callback.');
+});
+$(".colorbox").colorbox();
+$(".youtube").colorbox({iframe:true, width:650, height:550});
+$(".iframe").colorbox({width:"80%", height:"80%", iframe:true});
+$(".inline").colorbox({width:"50%", inline:true, href:"#inline_example1"});
+
+//Example of preserving a JavaScript event for inline calls.
+$("#click").click(function(){ 
+$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+return false;
+});
+});
+</script>
+
 </head>
 
   <body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
