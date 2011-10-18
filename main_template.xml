@@ -1047,7 +1047,7 @@ return false;
         <b:if cond='data:blog.pageType != &quot;item&quot;'>
           <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
             <b:if cond='data:post.allowComments'>
-              <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 1'>1 <data:top.commentLabel/><b:else/><!--<data:post.numComments/> --><data:top.commentLabelPlural/></b:if></a>
+              <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 1'>1 <data:top.commentLabel/><b:else/><!--<data:post.numComments/><data:top.commentLabelPlural/> --></b:if></a>
             </b:if>
           </b:if>
         </b:if>
