@@ -1076,7 +1076,7 @@ return false;
 </b:includable>
 <b:includable id='comment-form' var='post'>
   <div class='comment-form'>
-    <!--<a name='comment-form'/>
+    <a name='comment-form'/>
     <b:if cond='data:mobile'>
       <h4 id='comment-post-message'>
         <a expr:id='data:widget.instanceId + &quot;_comment-editor-toggle-link&quot;' href='javascript:void(0)'><data:postCommentMsg/></a></h4>
@@ -1095,13 +1095,13 @@ return false;
     <data:post.cmtfpIframe/>
     <script type='text/javascript'>
       BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);
-    </script>-->
+    </script>
 <!-- Put this div tag to the place, where the Comments block will be -->
 <div id='vk_comments'/>
 <script type='text/javascript'>
 VK.Widgets.Comments(&quot;vk_comments&quot;, {limit: 20, width: &quot;580&quot;, attach: &quot;*&quot;});
 </script>
-  </div>
+</div>
 </b:includable>
 <b:includable id='backlinkDeleteIcon' var='backlink'>
   <span expr:class='&quot;item-control &quot; + data:backlink.adminClass'>
@@ -1376,6 +1376,11 @@ VK.Widgets.Comments(&quot;vk_comments&quot;, {limit: 20, width: &quot;580&quot;,
 
           <div class='post-body'>
             <b:if cond='data:post.snippet'><data:post.snippet/></b:if>
+            <div id='vk_comments'/>
+              <script type='text/javascript'>
+              VK.Widgets.Comments(&quot;vk_comments&quot;, {limit: 20, width: &quot;580&quot;, attach: &quot;*&quot;});
+              </script>
+            </div>
           </div>
         </div>
 
