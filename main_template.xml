@@ -18,9 +18,11 @@ Name:     Picture Window
 Designer: Josh Peterson
 URL:      www.noaesthetic.com
 ----------------------------------------------- */
+    <!-- начало моих правок-->
 #navbar-iframe {
 display: none !important;
 }
+    <!-- конец моих правок-->
 /* Variable definitions
    ====================
    <Variable name="keycolor" description="Main Color" type="color" default="#1a222a" value="#1a222a"/>
@@ -621,6 +623,13 @@ html .mobile .mobile-date-outer, html .mobile .blog-pager {
       }
       ]]>
     </b:template-skin>
+    <!-- начало моих правок-->
+    <!-- Скрипты для контактовских комментариев -->
+<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?34"></script>
+<script type="text/javascript">
+  VK.init({apiId: 2441283, onlyWidgets: true});
+</script>
+    <!-- конец моих правок-->
   </head>
 
   <body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
@@ -1032,7 +1041,7 @@ html .mobile .mobile-date-outer, html .mobile .blog-pager {
 <b:includable id='comment-form' var='post'>
   <div class='comment-form'>
     <a name='comment-form'/>
-    <b:if cond='data:mobile'>
+    <!--<b:if cond='data:mobile'>
       <h4 id='comment-post-message'>
         <a expr:id='data:widget.instanceId + &quot;_comment-editor-toggle-link&quot;' href='javascript:void(0)'><data:postCommentMsg/></a></h4>
       <p><data:blogCommentMessage/></p>
@@ -1050,7 +1059,13 @@ html .mobile .mobile-date-outer, html .mobile .blog-pager {
     <data:post.cmtfpIframe/>
     <script type='text/javascript'>
       BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);
-    </script>
+    </script>-->
+<!-- Контактовские комментарии -->
+<div id="vk_comments"></div>
+<script type="text/javascript">
+VK.Widgets.Comments("vk_comments", {limit: 15, width: "496", attach: "*"});
+</script>
+<!--Конец контактовских комментариев-->
   </div>
 </b:includable>
 <b:includable id='backlinkDeleteIcon' var='backlink'>
