@@ -18,16 +18,16 @@ Name:     Picture Window
 Designer: Josh Peterson
 URL:      www.noaesthetic.com
 ----------------------------------------------- */
-    <!-- начало моих правок-->
 #navbar-iframe {
 display: none !important;
 }
-    <!-- конец моих правок-->
+
+
 /* Variable definitions
    ====================
    <Variable name="keycolor" description="Main Color" type="color" default="#1a222a" value="#1a222a"/>
    <Variable name="body.background" description="Body Background" type="background"
-       color="$(body.background.color)" default="#111111 url(http://themes.googleusercontent.com/image?id=1OACCYOE0-eoTRTfsBuX1NMN9nz599ufI1Jh0CggPFA_sK80AGkIr8pLtYRpNUKPmwtEa) repeat-x fixed top center" value="#111111 url(http://themes.googleusercontent.com/image?id=1OACCYOE0-eoTRTfsBuX1NMN9nz599ufI1Jh0CggPFA_sK80AGkIr8pLtYRpNUKPmwtEa) repeat-x fixed top center"/>
+       color="$(body.background.color)" default="#111111 url(http://themes.googleusercontent.com/image?id=1OACCYOE0-eoTRTfsBuX1NMN9nz599ufI1Jh0CggPFA_sK80AGkIr8pLtYRpNUKPmwtEa) repeat-x fixed top center" value="$(color) url(http://4.bp.blogspot.com/-DFHewV7uCQ0/TkejWHaef6I/AAAAAAAAKlk/acZoT7a2Y8g/s0/background.jpg) repeat fixed top center"/>
 
    <Group description="Page Text" selector="body">
      <Variable name="body.font" description="Font" type="font"
@@ -36,7 +36,7 @@ display: none !important;
    </Group>
 
    <Group description="Backgrounds" selector=".body-fauxcolumns-outer">
-     <Variable name="body.background.color" description="Outer Background" type="color" default="#296695" value="#111111"/>
+     <Variable name="body.background.color" description="Outer Background" type="color" default="#296695" value="#296695"/>
      <Variable name="header.background.color" description="Header Background" type="color" default="transparent" value="transparent"/>
      <Variable name="post.background.color" description="Post Background" type="color" default="#ffffff" value="#ffffff"/>
    </Group>
@@ -44,7 +44,7 @@ display: none !important;
    <Group description="Links" selector=".main-outer">
      <Variable name="link.color" description="Link Color" type="color" default="#336699" value="#336699"/>
      <Variable name="link.visited.color" description="Visited Color" type="color" default="#6699cc" value="#6699cc"/>
-     <Variable name="link.hover.color" description="Hover Color" type="color" default="#33aaff" value="#33aaff"/>
+     <Variable name="link.hover.color" description="Hover Color" type="color" default="#33aaff" value="#32aaff"/>
    </Group>
 
    <Group description="Blog Title" selector=".header h1">
@@ -57,7 +57,7 @@ display: none !important;
      <Variable name="tabs.font" description="Font" type="font"
          default="normal normal 15px Arial, Tahoma, Helvetica, FreeSans, sans-serif" value="normal normal 15px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
      <Variable name="tabs.text.color" description="Text Color" type="color" default="#ffffff" value="#ffffff"/>
-     <Variable name="tabs.selected.text.color" description="Selected Color" type="color" default="$(link.color)" value="$(link.color)"/>
+     <Variable name="tabs.selected.text.color" description="Selected Color" type="color" default="$(link.color)" value="#336699"/>
    </Group>
 
    <Group description="Tabs Background" selector=".tabs-outer .PageList">
@@ -92,9 +92,9 @@ display: none !important;
    </Group>
 
    <Group description="Footer Links" selector=".footer-outer">
-     <Variable name="footer.link.color" description="Link Color" type="color" default="#99ccee" value="#99ccee"/>
+     <Variable name="footer.link.color" description="Link Color" type="color" default="#99ccee" value="#98ccee"/>
      <Variable name="footer.link.visited.color" description="Visited Color" type="color" default="#77aaee" value="#77aaee"/>
-     <Variable name="footer.link.hover.color" description="Hover Color" type="color" default="#33aaff" value="#33aaff"/>
+     <Variable name="footer.link.hover.color" description="Hover Color" type="color" default="#33aaff" value="#32aaff"/>
    </Group>
 
    <Variable name="content.margin" description="Content Margin Top" type="length" default="20px" value="20px"/>
@@ -623,14 +623,50 @@ html .mobile .mobile-date-outer, html .mobile .blog-pager {
       }
       ]]>
     </b:template-skin>
-    <!-- начало моих правок-->
-    <!-- Скрипты для контактовских комментариев -->
-<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?34"></script>
-<script type="text/javascript">
+ <script charset='windows-1251' src='http://vkontakte.ru/js/api/openapi.js' type='text/javascript'/>
+ <script type='text/javascript'>
+  VK.init({
+    apiId: 2441283,
+    onlyWidgets: true
+  });
+</script>
+<!-- Put this script tag to the <head> of your page -->
+<script src='http://userapi.com/js/api/openapi.js?34' type='text/javascript'/>
+
+<script type='text/javascript'>
   VK.init({apiId: 2441283, onlyWidgets: true});
 </script>
-    <!-- конец моих правок-->
-  </head>
+
+<!-- Кнопка мне нравится для главной страницы -->
+<script charset='windows-1251' src='http://vkontakte.ru/js/api/share.js?11' type='text/javascript'/>
+<!--Кусок для lightbox, который для календаря-->
+<link href='http://dl.getdropbox.com/u/2863383/js/colorbox132/example2/colorbox.css' media='screen' rel='stylesheet' type='text/css'/>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js' type='text/javascript'/>
+<script src='https://raw.github.com/artleg/table_tennis_school/master/scripts/jquery.colorbox.js' type='text/javascript'/>
+<script type='text/javascript'>
+$(document).ready(function(){
+//Examples of how to assign the ColorBox event to elements
+$(&quot;a[rel=&#39;example1&#39;]&quot;).colorbox();
+$(&quot;a[rel=&#39;example2&#39;]&quot;).colorbox({transition:&quot;fade&quot;});
+$(&quot;a[rel=&#39;example3&#39;]&quot;).colorbox({transition:&quot;none&quot;, width:&quot;75%&quot;, height:&quot;75%&quot;});
+$(&quot;a[rel=&#39;example4&#39;]&quot;).colorbox({slideshow:true});
+$(&quot;.single&quot;).colorbox({}, function(){
+alert(&#39;Howdy, this is an example callback.&#39;);
+});
+$(&quot;.colorbox&quot;).colorbox();
+$(&quot;.youtube&quot;).colorbox({iframe:true, width:650, height:550});
+$(&quot;.iframe&quot;).colorbox({width:&quot;90%&quot;, height:&quot;90%&quot;, iframe:true});
+$(&quot;.inline&quot;).colorbox({width:&quot;50%&quot;, inline:true, href:&quot;#inline_example1&quot;});
+
+//Example of preserving a JavaScript event for inline calls.
+$(&quot;#click&quot;).click(function(){ 
+$(&#39;#click&#39;).css({&quot;background-color&quot;:&quot;#f00&quot;, &quot;color&quot;:&quot;#fff&quot;, &quot;cursor&quot;:&quot;inherit&quot;}).text(&quot;Open this window again and this message will still be here.&quot;);
+return false;
+});
+});
+</script>
+
+</head>
 
   <body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
   <div class='body-fauxcolumns'>
@@ -1011,7 +1047,7 @@ html .mobile .mobile-date-outer, html .mobile .blog-pager {
         <b:if cond='data:blog.pageType != &quot;item&quot;'>
           <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
             <b:if cond='data:post.allowComments'>
-              <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 1'>1 <data:top.commentLabel/><b:else/><data:post.numComments/> <data:top.commentLabelPlural/></b:if></a>
+              <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 1'>1 <data:top.commentLabel/><b:else/><!--<data:post.numComments/> --><data:top.commentLabelPlural/></b:if></a>
             </b:if>
           </b:if>
         </b:if>
@@ -1040,8 +1076,8 @@ html .mobile .mobile-date-outer, html .mobile .blog-pager {
 </b:includable>
 <b:includable id='comment-form' var='post'>
   <div class='comment-form'>
-    <a name='comment-form'/>
-    <!--<b:if cond='data:mobile'>
+    <!--<a name='comment-form'/>
+    <b:if cond='data:mobile'>
       <h4 id='comment-post-message'>
         <a expr:id='data:widget.instanceId + &quot;_comment-editor-toggle-link&quot;' href='javascript:void(0)'><data:postCommentMsg/></a></h4>
       <p><data:blogCommentMessage/></p>
@@ -1060,12 +1096,11 @@ html .mobile .mobile-date-outer, html .mobile .blog-pager {
     <script type='text/javascript'>
       BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);
     </script>-->
-<!-- Контактовские комментарии -->
-<div id="vk_comments"></div>
-<script type="text/javascript">
-VK.Widgets.Comments("vk_comments", {limit: 15, width: "496", attach: "*"});
+<!-- Put this div tag to the place, where the Comments block will be -->
+<div id='vk_comments'/>
+<script type='text/javascript'>
+VK.Widgets.Comments(&quot;vk_comments&quot;, {limit: 20, width: &quot;580&quot;, attach: &quot;*&quot;});
 </script>
-<!--Конец контактовских комментариев-->
   </div>
 </b:includable>
 <b:includable id='backlinkDeleteIcon' var='backlink'>
@@ -1159,7 +1194,7 @@ VK.Widgets.Comments("vk_comments", {limit: 15, width: "496", attach: "*"});
                 <b:if cond='data:blog.pageType != &quot;item&quot;'>
                   <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
                     <b:if cond='data:post.allowComments'>
-                      <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 1'>1 <data:top.commentLabel/><b:else/><data:post.numComments/> <data:top.commentLabelPlural/></b:if></a>
+                      <!--<a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 1'>1 <data:top.commentLabel/><b:else/><data:post.numComments/> <data:top.commentLabelPlural/></b:if></a>-->
                     </b:if>
                   </b:if>
                 </b:if>
@@ -1169,7 +1204,7 @@ VK.Widgets.Comments("vk_comments", {limit: 15, width: "496", attach: "*"});
             <div class='post-footer-line post-footer-line-2'>
               <b:if cond='data:top.showMobileShare'>
                 <div class='mobile-link-button goog-inline-block' id='mobile-share-button'>
-                  <a href='javascript:void(0);'><data:shareMsg/></a>
+                  <a href='javascript:void();'><data:shareMsg/></a>
                 </div>
               </b:if>
               <b:if cond='data:top.showDummy'>
@@ -1351,7 +1386,7 @@ VK.Widgets.Comments("vk_comments", {limit: 15, width: "496", attach: "*"});
         <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
           <b:if cond='data:post.allowComments'>
             <b:if cond='data:post.numComments != 0'>
-              <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 1'>1 <data:top.commentLabel/><b:else/><data:post.numComments/> <data:top.commentLabelPlural/></b:if></a>
+              <!--<a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 1'>1 <data:top.commentLabel/><b:else/><data:post.numComments/> <data:top.commentLabelPlural/></b:if></a>-->
             </b:if>
           </b:if>
         </b:if>
@@ -1371,13 +1406,13 @@ VK.Widgets.Comments("vk_comments", {limit: 15, width: "496", attach: "*"});
   <div class='comments' id='comments'>
     <a name='comments'/>
     <b:if cond='data:post.allowComments'>
-      <h4>
+      <!--<h4>
         <b:if cond='data:post.numComments == 1'>
           1 <data:commentLabel/>:
         <b:else/>
           <data:post.numComments/> <data:commentLabelPlural/>:
         </b:if>
-      </h4>
+      </h4>-->
 
       <b:if cond='data:post.commentPagingRequired'>
         <span class='paging-control-container'>
@@ -1588,7 +1623,6 @@ VK.Widgets.Comments("vk_comments", {limit: 15, width: "496", attach: "*"});
         document.body.className = document.body.className.replace(&#39;loading&#39;, &#39;&#39;);
       }, 10);
   </script>
-  <b:include data='blog' name='google-analytics'/>
 </body>
 
 <macro:includable id='sections' var='col'>
