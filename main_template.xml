@@ -726,6 +726,18 @@ return false;
     <div class='region-inner header-inner'>
       <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
 <b:widget id='Header1' locked='true' title='Секция настольного тенниса (заголовок)' type='Header'>
+<b:includable id='title'>
+  <b:if cond='data:blog.url == data:blog.homepageUrl'>
+    <data:title/> 
+  <b:else/>
+    <a expr:href='data:blog.homepageUrl'><data:title/></a>
+  </b:if>
+</b:includable>
+<b:includable id='description'>
+  <div class='descriptionwrapper'>
+    <p class='description'><span><data:description/></span></p>
+  </div>
+</b:includable>
 <b:includable id='main'>
 
   <b:if cond='data:useImage'>
@@ -780,18 +792,6 @@ return false;
       <b:include name='description'/>
     </div>
   </b:if>
-</b:includable>
-<b:includable id='title'>
-  <b:if cond='data:blog.url == data:blog.homepageUrl'>
-    <data:title/>
-  <b:else/>
-    <a expr:href='data:blog.homepageUrl'><data:title/></a>
-  </b:if>
-</b:includable>
-<b:includable id='description'>
-  <div class='descriptionwrapper'>
-    <p class='description'><span><data:description/></span></p>
-  </div>
 </b:includable>
 </b:widget>
 </b:section>
@@ -935,7 +935,7 @@ return false;
       </span>
     </b:if>
 
-    <a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a>
+    <!--<a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a>-->
 
     <b:if cond='data:mobileLinkUrl'>
       <div class='blog-mobile-link'>
@@ -1096,12 +1096,7 @@ return false;
     <script type='text/javascript'>
       BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);
     </script>
-<!-- Put this div tag to the place, where the Comments block will be -->
-<div id='vk_comments'/>
-<script type='text/javascript'>
-VK.Widgets.Comments(&quot;vk_comments&quot;, {limit: 20, width: &quot;580&quot;, attach: &quot;*&quot;});
-</script>
-</div>
+  </div>
 </b:includable>
 <b:includable id='backlinkDeleteIcon' var='backlink'>
   <span expr:class='&quot;item-control &quot; + data:backlink.adminClass'>
@@ -1292,7 +1287,7 @@ VK.Widgets.Comments(&quot;vk_comments&quot;, {limit: 20, width: &quot;580&quot;,
     <b:include name='nextprev'/>
 
     <!-- feed links -->
-    <b:include name='feedLinks'/>
+    <!--<b:include name='feedLinks'/>
 
     <b:if cond='data:top.showStars'>
       <script src='//www.google.com/jsapi' type='text/javascript'/>
@@ -1305,7 +1300,7 @@ VK.Widgets.Comments(&quot;vk_comments&quot;, {limit: 20, width: &quot;580&quot;,
         }
         google.setOnLoadCallback(initialize);
       </script>
-    </b:if>
+    </b:if>-->
 
   <b:else/>
     <b:include name='mobile-main'/>
@@ -1376,11 +1371,6 @@ VK.Widgets.Comments(&quot;vk_comments&quot;, {limit: 20, width: &quot;580&quot;,
 
           <div class='post-body'>
             <b:if cond='data:post.snippet'><data:post.snippet/></b:if>
-            <div id='vk_comments'/>
-              <script type='text/javascript'>
-              VK.Widgets.Comments(&quot;vk_comments&quot;, {limit: 20, width: &quot;580&quot;, attach: &quot;*&quot;});
-              </script>
-            </div>
           </div>
         </div>
 
@@ -1524,6 +1514,19 @@ VK.Widgets.Comments(&quot;vk_comments&quot;, {limit: 20, width: &quot;580&quot;,
   </div>
 </b:includable>
 </b:widget>
+<b:widget id='HTML1' locked='false' title='' type='HTML'>
+<b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+</b:widget>
 </b:section>
         </div>
         </div>
@@ -1618,6 +1621,11 @@ VK.Widgets.Comments(&quot;vk_comments&quot;, {limit: 20, width: &quot;580&quot;,
   </div>
   <div class='content-cap-bottom cap-bottom'>
     <div class='cap-left'/>
+     <!-- Put this div tag to the place, where the Comments block will be -->
+     <div id='vk_comments'/>
+     <script type='text/javascript'>
+     VK.Widgets.Comments(&quot;vk_comments&quot;, {limit: 15, width: &quot;496&quot;, attach: &quot;*&quot;});
+     </script>
     <div class='cap-right'/>
   </div>
   </div>
