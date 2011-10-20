@@ -1076,7 +1076,7 @@ return false;
 </b:includable>
 <b:includable id='comment-form' var='post'>
   <div class='comment-form'>
-    <a name='comment-form'/>
+    <!--<a name='comment-form'/>
     <b:if cond='data:mobile'>
       <h4 id='comment-post-message'>
         <a expr:id='data:widget.instanceId + &quot;_comment-editor-toggle-link&quot;' href='javascript:void(0)'><data:postCommentMsg/></a></h4>
@@ -1095,6 +1095,11 @@ return false;
     <data:post.cmtfpIframe/>
     <script type='text/javascript'>
       BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);
+    </script>-->
+    <!-- Put this div tag to the place, where the Comments block will be -->
+    <div id='vk_comments'/>
+    <script type='text/javascript'>
+    VK.Widgets.Comments(&quot;vk_comments&quot;, {limit: 10, width: &quot;580&quot;, attach: &quot;*&quot;});
     </script>
   </div>
 </b:includable>
@@ -1514,19 +1519,6 @@ return false;
   </div>
 </b:includable>
 </b:widget>
-<b:widget id='HTML1' locked='false' title='' type='HTML'>
-<b:includable id='main'>
-  <!-- only display title if it's non-empty -->
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-    <data:content/>
-  </div>
-
-  <b:include name='quickedit'/>
-</b:includable>
-</b:widget>
 </b:section>
         </div>
         </div>
@@ -1621,11 +1613,6 @@ return false;
   </div>
   <div class='content-cap-bottom cap-bottom'>
     <div class='cap-left'/>
-     <!-- Put this div tag to the place, where the Comments block will be -->
-     <div id='vk_comments'/>
-     <script type='text/javascript'>
-     VK.Widgets.Comments(&quot;vk_comments&quot;, {limit: 15, width: &quot;496&quot;, attach: &quot;*&quot;});
-     </script>
     <div class='cap-right'/>
   </div>
   </div>
